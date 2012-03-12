@@ -1,5 +1,5 @@
 class FileSystem
-  def self.ls path
+  def self.ls path = ""
     items = [".."]
 
     Dir["#{path}/*"].each do |f|
