@@ -2,7 +2,7 @@ Kronstadt::Application.routes.draw do
 
   get "api/v1/" => 'api/v1#index'
 
-  get "api/v1/file_system/ls(/:id)(.:format)" => 'api/v1/file_system#ls', :id => /.*/
+  get ":format/file_system/ls/(/:id)" => 'api/v1/file_system#ls', :id => /.*/
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
