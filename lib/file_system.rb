@@ -4,7 +4,9 @@ class FileSystem
     path = "/" if path.length < 1
     path = "/" + path if path[0] != "/"
 
-    items = [".."]
+    items = []
+
+    items += [".."] if path != "/"
 
     Dir["#{path}/*"].each do |f|
       files = f.split("/")
