@@ -1,4 +1,8 @@
 Kronstadt::Application.routes.draw do
+
+  get "api/v1/" => 'api/v1#index'
+
+  get "api/v1/file_system/" => 'api/v1/file_system#ls'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
