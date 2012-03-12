@@ -1,5 +1,9 @@
 class FileSystem
   def self.ls path = ""
+    path = "/" if path == nil
+    path = "/" if path.length < 1
+    path = "/" + path if path[0] != "/"
+
     items = [".."]
 
     Dir["#{path}/*"].each do |f|
