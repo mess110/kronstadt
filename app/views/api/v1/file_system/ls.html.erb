@@ -1,14 +1,14 @@
 <ul data-role="listview" data-divider-theme="a" data-inset="false" data-filter="true">
-                    <%
-                      ext = get_extension @files[:pwd]
-                      if (ext == ".avi")
-                        #RestClient.get "http://localhost:12345/play/#{@files[:pwd].slice(0...-1)}"
-                        %>
-                      <li data-theme="c"><a href="/<%= "ls" + @files[:pwd] + ".." %>"><img src="" alt="" class="ui-li-icon">..</a></li>
-                      <%
-                      else
-                      @files[:file_names].each do |i|
-                    %>
-                        <li data-theme="c"><a href="/<%= "ls" + @files[:pwd] + i %>"><img src="" alt="" class="ui-li-icon"><%= i %></a></li>
-                    <% end end %>
-                </ul>
+  <%
+  ext = get_extension @files[:pwd]
+  if (ext == ".avi")
+  %>
+    <li data-theme="c"><a href="/<%= "ls" + @files[:pwd] + ".." %>"><img src="" alt="" class="ui-li-icon">..</a></li>
+  <%
+  else
+    @files[:file_names].each do |i|
+  %>
+    <li data-theme="c"><a href="/<%= "html/file_system/ls" + @files[:pwd] + i %>"><img src="" alt="" class="ui-li-icon"><%= i %></a></li>
+  <% end 
+end %>
+</ul>

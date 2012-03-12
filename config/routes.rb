@@ -1,8 +1,12 @@
 Kronstadt::Application.routes.draw do
 
+  get "home" => 'home#index'
+
   get "api/v1/" => 'api/v1#index'
 
   get ":format/file_system/ls/(/:id)" => 'api/v1/file_system#ls', :id => /.*/
+
+  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
