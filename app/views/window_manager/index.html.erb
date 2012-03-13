@@ -1,0 +1,16 @@
+<div data-role="fieldcontain">
+  <label for="selectmenu2">
+  </label>
+  <select data-native-menu="false" name="selectmenu2" id="selectmenu2">
+    <% for win in @windows %>
+      <option value="<%= win[:id] %>">
+          <%= win[:name] %>
+      </option>
+    <% end %>
+  </select>
+  <a data-role="button" href="#" onClick="$.get('/json/window_manager/move_right?window_id=' + $('#selectmenu2 :selected').val())" data-transition="pop">move_right</a>
+  <a data-role="button" href="#" onClick="$.get('/json/window_manager/focus?window_id=' + $('#selectmenu2 :selected').val())" data-transition="pop">focus</a>
+  <a data-role="button" href="#" onClick="$.get('/json/window_manager/fullscreen?window_id=' + $('#selectmenu2 :selected').val())" data-transition="pop">fullscreen</a>
+  <a data-role="button" href="#" onClick="$.get('/json/window_manager/close?window_id=' + $('#selectmenu2 :selected').val())" data-transition="pop">close</a>
+  <%= @windows %>
+</div>

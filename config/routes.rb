@@ -16,6 +16,12 @@ Kronstadt::Application.routes.draw do
   get ":format/mouse_input/click" => 'mouse_input#click'
   get ":format/mouse_input/double_click" => 'mouse_input#double_click'
 
+  get ":format/window_manager" => 'window_manager#index'
+  get ":format/window_manager/focus" => 'window_manager#focus'
+  get ":format/window_manager/close" => 'window_manager#close'
+  get ":format/window_manager/fullscreen" => 'window_manager#fullscreen'
+  get ":format/window_manager/move_right" => 'window_manager#move_right'
+
   root :to => 'home#index'
 
   # The priority is based upon order of creation:
