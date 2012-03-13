@@ -1,6 +1,7 @@
 class Api::V1::FileSystemController < ApplicationController
   def ls
     @files = FileSystem.ls params[:id]
+    session[:pwd] = '/' + params[:id].to_s
 
     respond_to do |format|
       format.html

@@ -6,6 +6,10 @@ Kronstadt::Application.routes.draw do
 
   get ":format/file_system/ls/(/:id)" => 'api/v1/file_system#ls', :id => /.*/
 
+  get ":format/movie_player" => 'movie_player#index'
+  get ":format/movie_player/play" => 'movie_player#play'
+  get ":format/movie_player/kill" => 'movie_player#kill'
+
   root :to => 'home#index'
 
   # The priority is based upon order of creation:
