@@ -3,7 +3,7 @@ class PowerManagerController < ApplicationController
   end
 
   def shutdown
-    system "echo #{password} | sudo -S /sbin/shutdown -P 0 &"
+    system "echo #{APP_CONFIG[:password]} | sudo -S /sbin/shutdown -P 5 &"
 
     respond_to do |format|
       format.html

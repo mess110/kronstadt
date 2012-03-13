@@ -23,8 +23,8 @@ Kronstadt::Application.routes.draw do
   get ":format/window_manager/move_right" => 'window_manager#move_right'
 
   get ":format/power_manager" => 'power_manager#index'
-  get ":format/power_manager/shutdown" => 'power_manager#index'
-  get ":format/power_manager/reboot" => 'power_manager#index'
+  get ":format/power_manager/shutdown" => 'power_manager#shutdown'
+  get ":format/power_manager/reboot" => 'power_manager#reboot'
 
   root :to => 'home#index'
 
