@@ -22,6 +22,10 @@ Kronstadt::Application.routes.draw do
   get ":format/window_manager/fullscreen" => 'window_manager#fullscreen'
   get ":format/window_manager/move_right" => 'window_manager#move_right'
 
+  get ":format/power_manager" => 'power_manager#index'
+  get ":format/power_manager/shutdown" => 'power_manager#index'
+  get ":format/power_manager/reboot" => 'power_manager#index'
+
   root :to => 'home#index'
 
   # The priority is based upon order of creation:

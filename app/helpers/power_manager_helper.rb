@@ -1,0 +1,2 @@
+module PowerManagerHelper
+end
