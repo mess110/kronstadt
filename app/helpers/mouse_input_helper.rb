@@ -1,0 +1,2 @@
+module MouseInputHelper
+end
