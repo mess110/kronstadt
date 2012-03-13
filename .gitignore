@@ -16,3 +16,6 @@
 
 # Linux specific files
 *~
+
+# Temp files
+/config/config.yml
