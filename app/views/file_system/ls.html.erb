@@ -2,4 +2,7 @@
   <% @files[:file_names].each do |i| %>
     <li data-theme="c"><a href="/<%= "html/file_system/ls" + @files[:pwd] + i %>"><img src="" alt="" class="ui-li-icon"><%= i %></a></li>
   <% end %>
+  <% if is_movie %>
+    <li data-theme="c"><a href="#" onClick="$.get('/json/movie_player/play')"><img src="" alt="" class="ui-li-icon">play</a></li>
+  <% end %>
 </ul>
