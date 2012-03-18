@@ -1,19 +1,24 @@
 <ul data-role="listview" data-divider-theme="a" data-inset="false" data-filter="true">
   <li data-theme="c">
     <% if bookmarked? %>
-      <a href="/html/file_system/ls<%= session[:pwd] %>?ignore_this" onClick="$.get('/html/file_system/remove_bookmark?location=<%= session[:pwd] %>');">
-        <img src="" alt="" class="ui-li-icon">remove bookmark
+      <!-- appending ?ignore_this ensures the website will reload, as it is a different page -->
+      <a href="/html/file_system/ls<%= session[:pwd] %>?ignore_this" onClick="$.get('/html/file_system/remove_bookmark?location=<%= session[:pwd] %>');" data-transition="none">
+        <center><img src="/assets/star.png" alt=""></center>
       </a>
     <% else %>
-      <a href="/html/file_system/ls<%= session[:pwd] %>?ignore_this_too" onClick="$.get('/html/file_system/add_bookmark?location=<%= session[:pwd] %>');">
-        <img src="" alt="" class="ui-li-icon">bookmark
+      <a href="/html/file_system/ls<%= session[:pwd] %>?ignore_this_too" onClick="$.get('/html/file_system/add_bookmark?location=<%= session[:pwd] %>');" data-transition="none">
+        <center><img src="/assets/unstar.png" alt=""></center>
       </a>
     <% end %>
   </li>
   <% @files[:file_names].each do |i| %>
-    <li data-theme="c"><a href="/<%= "html/file_system/ls" + @files[:pwd] + i %>"><img src="" alt="" class="ui-li-icon"><%= i %></a></li>
+    <li data-theme="c"><a href="/<%= "html/file_system/ls" + @files[:pwd] + i %>" data-transition="none">
+      <img src="" alt="" class="ui-li-icon"><%= i %></a>
+    </li>
   <% end %>
   <% if is_movie %>
-    <li data-theme="c"><a href="#" onClick="$.get('/json/movie_player/play')"><img src="" alt="" class="ui-li-icon">play</a></li>
+    <li data-theme="c"><a href="#" onClick="$.get('/json/movie_player/play')" data-transition="none">
+      <img src="" alt="" class="ui-li-icon">play</a>
+    </li>
   <% end %>
 </ul>
