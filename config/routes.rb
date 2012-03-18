@@ -2,7 +2,11 @@ Kronstadt::Application.routes.draw do
 
   get "home" => 'home#index'
 
+  get ":format/file_system" => 'file_system#index'
   get ":format/file_system/ls/(/:id)" => 'file_system#ls', :id => /.*/
+  get ":format/file_system/bookmarks" => 'file_system#bookmarks'
+  get ":format/file_system/add_bookmark" => 'file_system#add_bookmark'
+  get ":format/file_system/remove_bookmark" => 'file_system#remove_bookmark'
 
   get ":format/movie_player" => 'movie_player#index'
   get ":format/movie_player/play" => 'movie_player#play'

@@ -11,10 +11,11 @@
 <div data-role="page" id="page1">
             <div data-theme="a" data-role="header">
                 <center>
-                    <a data-role="button" href="<%= home_path %>" data-transition="none">Home</a>
-                    <a data-role="button" href="/html/file_system/ls" data-transition="none">File Browser</a>
-                    <a data-role="button" href="/html/mouse_input" data-transition="none">Mouse Input</a>
-                    <a data-role="button" href="/html/window_manager" data-transition="none">Window Manager</a>
+                    <%= link_to(image_tag('home.png'), home_path, "data-transition" => "none") %>
+                    <%= link_to(image_tag('file_system.png'), '/html/file_system', "data-transition" => "none") %>
+                    <%= link_to(image_tag('star.png'), '/html/file_system/bookmarks', "data-transition" => "none") %>
+                    <%= link_to(image_tag('mouse.png'), '/html/mouse_input', "data-transition" => "none") %>
+                    <%= link_to(image_tag('window.png'), '/html/window_manager', "data-transition" => "none") %>
                 </center>
             </div>
 

@@ -1,4 +1,15 @@
 <ul data-role="listview" data-divider-theme="a" data-inset="false" data-filter="true">
+  <li data-theme="c">
+    <% if bookmarked? %>
+      <a href="#" onClick="$.get('/html/file_system/remove_bookmark?location=<%= session[:pwd] %>');">
+        <img src="" alt="" class="ui-li-icon">remove bookmark
+      </a>
+    <% else %>
+      <a href="#" onClick="$.get('/html/file_system/add_bookmark?location=<%= session[:pwd] %>');">
+        <img src="" alt="" class="ui-li-icon">bookmark
+      </a>
+    <% end %>
+  </li>
   <% @files[:file_names].each do |i| %>
     <li data-theme="c"><a href="/<%= "html/file_system/ls" + @files[:pwd] + i %>"><img src="" alt="" class="ui-li-icon"><%= i %></a></li>
   <% end %>

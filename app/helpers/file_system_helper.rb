@@ -7,4 +7,8 @@ module FileSystemHelper
 
     false
   end
+
+  def bookmarked?
+    !Bookmark.find_by_location(session[:pwd]).nil?
+  end
 end
