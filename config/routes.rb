@@ -2,9 +2,7 @@ Kronstadt::Application.routes.draw do
 
   get "home" => 'home#index'
 
-  get "api/v1/" => 'api/v1#index'
-
-  get ":format/file_system/ls/(/:id)" => 'api/v1/file_system#ls', :id => /.*/
+  get ":format/file_system/ls/(/:id)" => 'file_system#ls', :id => /.*/
 
   get ":format/movie_player" => 'movie_player#index'
   get ":format/movie_player/play" => 'movie_player#play'

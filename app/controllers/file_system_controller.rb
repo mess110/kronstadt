@@ -1,4 +1,4 @@
-class Api::V1::FileSystemController < ApplicationController
+class FileSystemController < ApplicationController
   def ls
     @files = FileSystem.ls params[:id]
     session[:pwd] = '/' + params[:id].to_s

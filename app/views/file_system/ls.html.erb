@@ -2,9 +2,4 @@
   <% @files[:file_names].each do |i| %>
     <li data-theme="c"><a href="/<%= "html/file_system/ls" + @files[:pwd] + i %>"><img src="" alt="" class="ui-li-icon"><%= i %></a></li>
   <% end %>
-  <%
-    ext = get_extension @files[:pwd]
-    if (ext == ".avi")
-    end
-  %>
 </ul>
