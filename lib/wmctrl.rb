@@ -1,3 +1,15 @@
+module Enumerable
+   def select_with_index
+      index = -1
+      (block_given? && self.class == Range || self.class == Array)  ?  select { |x| index += 1; yield(x, index) }  :  self
+   end
+
+   def select_with_index_blk(&block)
+      index = -1
+      (block && self.class == Range || self.class == Array)  ?  select { |x| index += 1; block.call(x, index) }  :  self
+   end
+end
+
 class Wmctrl
   def self.list_desktops
     `wmctrl -d`
@@ -11,7 +23,7 @@ class Wmctrl
       window_list << {
         :id => win_array[0],
         :desktop => win_array[1],
-        :name => win[win.rindex(" "),win.length-win.rindex(" ")].to_s
+        :name => win.split.select_with_index{|i, index| i if index > 2 }.join(" ")
       }
     end
     window_list
