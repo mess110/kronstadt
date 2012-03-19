@@ -32,4 +32,8 @@ class Wmctrl
   def self.move_right window_id
     `wmctrl -i -r #{window_id} -e 0,1440,-1,-1,-1`
   end
+
+  def self.window_id window_name
+    `wmctrl -l | grep #{window_name}`.split[0]
+  end
 end
