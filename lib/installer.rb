@@ -42,6 +42,6 @@ class Installer
   end
 
   def self.exec_path
-    File.join(Rails.root.to_s, 'script/server rails -d')
+    File.join(Rails.root.to_s, 'script/rails server -d')
   end
 end
