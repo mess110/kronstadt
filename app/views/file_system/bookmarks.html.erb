@@ -1,6 +1,6 @@
 <ul data-role="listview" data-divider-theme="a" data-inset="false">
   <% @bookmarks.each do |bookmark| %>
-    <li data-theme="c">
+    <li data-theme="c" data-transition="none">
       <a href="/<%= "html/file_system/ls" + bookmark.location %>"><img src="" alt="" class="ui-li-icon"><%= bookmark.location %></a>
     </li>
   <% end %>
