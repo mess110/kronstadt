@@ -1,10 +1,17 @@
 <h3>Stats</h3>
 <center>
-  <p>path: <strong><%= @path %></strong></p>
+  <p>home: <strong><%= Installer.home %></strong></p>
 </center>
 <center>
-  <p>ip: <strong><%= @ip %></strong></p>
+  <p>path: <strong><%= Rails.root.to_s %></strong></p>
 </center>
 <center>
-  <p>link: <strong><%= @market_link %></strong></p>
+  <p>ip: <strong><%= IfConfig.ips[0] %></strong></p>
 </center>
+<center>
+  <p>link: <strong><%= APP_CONFIG["market_link"] %></strong></p>
+</center>
+<center>
+  <p>autostart: <strong><%= Installer.autostart? %></strong></p>
+</center>
+

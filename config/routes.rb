@@ -1,7 +1,9 @@
 Kronstadt::Application.routes.draw do
 
   get "home" => 'home#index'
-  get "system" => 'system#info'
+
+  get ":format/system" => 'system#info'
+  get ":format/system/autostart" => 'system#autostart'
 
   get ":format/file_system" => 'file_system#index'
   get ":format/file_system/ls/(/:id)" => 'file_system#ls', :id => /.*/

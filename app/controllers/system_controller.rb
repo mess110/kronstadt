@@ -1,8 +1,21 @@
 class SystemController < ApplicationController
   def info
-    @path = Rails.root.to_s
-    @ip = IfConfig.ips[0]
-    @market_link = APP_CONFIG["market_link"]
-    @qr = RQRCode::QRCode.new(@market_link)
+    @qr = QRcode.generate
+
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => "<unimplemented />" }
+      format.json { render :json => "unimplemented" }
+    end
+  end
+
+  def autostart
+    @autostart = Installer.autostart
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.xml { render :xml => "<unimplemented />" }
+      format.json { render :json => "unimplemented" }
+    end
   end
 end

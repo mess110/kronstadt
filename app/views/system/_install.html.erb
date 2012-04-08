@@ -1,2 +1,5 @@
-<h3>Power</h3>
-<%= render :partial => 'power_manager/buttons' %>
+<h3>Install</h3>
+<pre>
+<%= Installer.generate_file %>
+</pre>
+<a data-role="button" href="<%= "/html/system?ignore=" + Time.now.strftime("%H%m%s") %>" onClick="$.get('/json/system/autostart')" data-transition="none">autostart</a>
