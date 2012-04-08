@@ -1,5 +1,6 @@
 development:
   password: pass1
+  market_link: http://
 
 test:
   password: pass1

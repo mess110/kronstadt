@@ -1,6 +1,8 @@
 Kronstadt::Application.routes.draw do
 
   get "home" => 'home#index'
+  get "qr" => 'home#market_link'
+  get "stats" => 'home#stats'
 
   get ":format/file_system" => 'file_system#index'
   get ":format/file_system/ls/(/:id)" => 'file_system#ls', :id => /.*/
