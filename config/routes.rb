@@ -1,8 +1,7 @@
 Kronstadt::Application.routes.draw do
 
   get "home" => 'home#index'
-  get "qr" => 'home#market_link'
-  get "stats" => 'home#stats'
+  get "system" => 'system#info'
 
   get ":format/file_system" => 'file_system#index'
   get ":format/file_system/ls/(/:id)" => 'file_system#ls', :id => /.*/
@@ -30,7 +29,7 @@ Kronstadt::Application.routes.draw do
   get ":format/power_manager/shutdown" => 'power_manager#shutdown'
   get ":format/power_manager/reboot" => 'power_manager#reboot'
 
-  root :to => 'home#index'
+  root :to => 'system#info'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

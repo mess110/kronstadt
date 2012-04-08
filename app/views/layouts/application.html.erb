@@ -7,21 +7,21 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div data-role="page" id="page1">
-            <div data-theme="a" data-role="header">
-                <center>
-                    <%= link_to(image_tag('home.png'), home_path, "data-transition" => "none") %>
-                    <%= link_to(image_tag('file_system.png'), '/html/file_system', "data-transition" => "none") %>
-                    <%= link_to(image_tag('star.png'), '/html/file_system/bookmarks', "data-transition" => "none") %>
-                    <%= link_to(image_tag('mouse.png'), '/html/mouse_input', "data-transition" => "none") %>
-                    <%= link_to(image_tag('window.png'), '/html/window_manager', "data-transition" => "none") %>
-                </center>
-            </div>
+  <body>
+    <div data-role="page" id="page1">
+      <div data-theme="a" data-role="header">
+        <center>
+          <%= link_to(image_tag('home.png'), system_path, "data-transition" => "none") %>
+          <%= link_to(image_tag('file_system.png'), '/html/file_system', "data-transition" => "none") %>
+          <%= link_to(image_tag('star.png'), '/html/file_system/bookmarks', "data-transition" => "none") %>
+          <%= link_to(image_tag('mouse.png'), '/html/mouse_input', "data-transition" => "none") %>
+          <%= link_to(image_tag('window.png'), '/html/window_manager', "data-transition" => "none") %>
+        </center>
+      </div>
 
-            <div data-role="content">
-                <%= yield %>
-            </div>
-        </div>
-    </body>
+      <div data-role="content">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
 </html>
