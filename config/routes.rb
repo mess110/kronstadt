@@ -16,10 +16,6 @@ Kronstadt::Application.routes.draw do
   get ":format/movie_player/kill" => 'movie_player#kill'
 
   get ":format/mouse_input/" => 'mouse_input#index'
-  get ":format/mouse_input/move" => 'mouse_input#move'
-  get ":format/mouse_input/incremental_move" => 'mouse_input#incremental_move'
-  get ":format/mouse_input/click" => 'mouse_input#click'
-  get ":format/mouse_input/double_click" => 'mouse_input#double_click'
 
   get ":format/window_manager" => 'window_manager#index'
   get ":format/window_manager/focus" => 'window_manager#focus'
