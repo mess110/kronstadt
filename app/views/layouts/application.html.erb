@@ -14,7 +14,10 @@
           <%= link_to(image_tag('home.png'), '/html/system', "data-transition" => "none") %>
           <%= link_to(image_tag('file_system.png'), '/html/file_system', "data-transition" => "none") %>
           <%= link_to(image_tag('star.png'), '/html/file_system/bookmarks', "data-transition" => "none") %>
-          <%= link_to(image_tag('mouse.png'), '/html/mouse_input', "data-transition" => "none") %>
+          <!-- http://invalidurluglyhack.cezara using this url, because android app checks for string ending with cezara at url-->
+          <!-- it then opens the mouse activity -->
+          <!-- this is an ugly hack, don't try this at home -->
+          <%= link_to(image_tag('mouse.png'), 'http://invalidurluglyhack.cezara/cezara', "data-transition" => "none") %>
           <%= link_to(image_tag('window.png'), '/html/window_manager', "data-transition" => "none") %>
         </center>
       </div>
