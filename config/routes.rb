@@ -27,6 +27,9 @@ Kronstadt::Application.routes.draw do
   get ":format/power_manager/shutdown" => 'power_manager#shutdown'
   get ":format/power_manager/reboot" => 'power_manager#reboot'
 
+  get ":format/radio_manager" => 'radio_manager#index'
+  get ":format/radio_manager/:id" => 'radio_manager#play'
+
   root :to => 'system#info'
 
   # The priority is based upon order of creation:
