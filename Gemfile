@@ -7,7 +7,7 @@ gem 'rails', '3.2.2'
 
 gem 'sqlite3'
 gem 'rqrcode'
-gem 'watir-webdriver'
+# gem 'watir-webdriver'
 
 # Gems used only for assets and not required
 # in production environments by default.
