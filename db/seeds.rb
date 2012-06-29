@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+RadioStation.create(name: "rock", url: "http://www.profm.ro/radio/profm_rock")
+RadioStation.create(name: "classic rock", url: "http://www.profm.ro/radio/profm_classicrock")
