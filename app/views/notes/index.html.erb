@@ -10,7 +10,7 @@
 <% @notes.each do |note| %>
   <tr>
     <td><%= image_tag "uptoke.png", :class => "uptoke", :note_id => note.id %></td>
-    <td><span><%= note.votes %></span>s</td>
+    <td><span><%= note.votes %></span></td>
     <td><%= image_tag "downtoke.png", :class => "downtoke", :note_id => note.id %></td>
     <td style="width: 70%"><%= note.text %></td>
     <td><%= link_to 'edit', edit_note_path(note) %></td>
