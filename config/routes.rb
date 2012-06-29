@@ -1,5 +1,8 @@
 Kronstadt::Application.routes.draw do
 
+  resources :notes
+  get "/notes/:id/vote/:vote" => "notes#vote"
+
   get "home" => 'home#index'
 
   get ":format/system" => 'system#info'
@@ -31,6 +34,8 @@ Kronstadt::Application.routes.draw do
   get ":format/radio_manager/:id" => 'radio_manager#play'
 
   root :to => 'system#info'
+
+  mount Resque::Server, :at => "/resque"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

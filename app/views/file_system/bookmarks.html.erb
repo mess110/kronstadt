@@ -1,7 +1,10 @@
 <ul data-role="listview" data-divider-theme="a" data-inset="false">
   <% @bookmarks.each do |bookmark| %>
     <li data-theme="c" data-transition="none">
-      <a href="/<%= "html/file_system/ls" + bookmark.location %>"><img src="" alt="" class="ui-li-icon"><%= bookmark.location %></a>
+      <a href="/<%= "html/file_system/ls" + bookmark.location %>" data-transition="none">
+        <img src="" alt="" class="ui-li-icon">
+        <span><%= bookmark.location %></span>
+      </a>
     </li>
   <% end %>
 </ul>

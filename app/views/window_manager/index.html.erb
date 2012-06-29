@@ -1,6 +1,5 @@
 <div data-role="fieldcontain">
-  <label for="selectmenu2">
-  </label>
+  <label for="selectmenu2"></label>
   <select data-native-menu="false" name="selectmenu2" id="selectmenu2">
     <% for win in @windows %>
       <option value="<%= win[:id] %>">
@@ -8,8 +7,33 @@
       </option>
     <% end %>
   </select>
-  <a data-role="button" href="#" onClick="$.get('/json/window_manager/move_right?window_id=' + $('#selectmenu2 :selected').val())" data-transition="none">move to tv</a>
-  <a data-role="button" href="#" onClick="$.get('/json/window_manager/fullscreen?window_id=' + $('#selectmenu2 :selected').val())" data-transition="none">fullscreen</a>
-  <a data-role="button" href="#" onClick="$.get('/json/window_manager/focus?window_id=' + $('#selectmenu2 :selected').val())" data-transition="none">focus</a>
-  <a data-role="button" href="#" onClick="$.get('/json/window_manager/close?window_id=' + $('#selectmenu2 :selected').val())" data-transition="none">close</a>
+  <a id="moveToTv" data-role="button" href="#" data-transition="none">move to tv</a>
+  <a id="fullscreen" data-role="button" href="#" data-transition="none">fullscreen</a>
+  <a id="focus" data-role="button" href="#" data-transition="none">focus</a>
+  <a id="close" data-role="button" href="#" data-transition="none">close</a>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $("#moveToTv").click(function() {
+    takeAction('move_right');
+  });
+
+  $("#fullscreen").click(function() {
+    takeAction('fullscreen');
+  });
+
+  $("#focus").click(function() {
+    takeAction('focus');
+  });
+
+  $("#close").click(function() {
+    takeAction('close');
+  });
+});
+
+takeAction = function(actionName) {
+  windowId = $('#selectmenu2 :selected').val();
+  $.get('/json/window_manager/' + actionName + '?window_id=' + windowId);
+}
+</script>

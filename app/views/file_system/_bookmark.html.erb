@@ -1,0 +1,12 @@
+<li data-theme="c">
+  <% if bookmarked? %>
+    <!-- appending ?ignore_this ensures the website will reload, as it is a different page -->
+    <a href="/html/file_system/ls<%= session[:pwd] %>?ignore_this" onClick="$.get('/html/file_system/remove_bookmark?location=<%= session[:pwd] %>');" data-transition="none">
+      <center><%= image_tag "star_mini.png" %></center>
+    </a>
+  <% else %>
+    <a href="/html/file_system/ls<%= session[:pwd] %>?ignore_this_too" onClick="$.get('/html/file_system/add_bookmark?location=<%= session[:pwd] %>');" data-transition="none">
+      <center><%= image_tag "unstar_mini.png" %></center>
+    </a>
+  <% end %>
+</li>
