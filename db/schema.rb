@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120629094857) do
+ActiveRecord::Schema.define(:version => 20120629130143) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "location"
@@ -19,10 +19,7 @@ ActiveRecord::Schema.define(:version => 20120629094857) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "notes", :force => true do |t|
-    t.string   "text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+# Could not dump table "notes" because of following StandardError
+#   Unknown type 'real' for column 'score'
 
 end

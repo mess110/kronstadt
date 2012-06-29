@@ -1,6 +1,7 @@
 Kronstadt::Application.routes.draw do
 
   resources :notes
+  get "/notes/:id/vote/:vote" => "notes#vote"
 
   get "home" => 'home#index'
 

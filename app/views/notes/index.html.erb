@@ -4,12 +4,14 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @notes.each do |note| %>
   <tr>
-    <td><%= image_tag "uptoke.png" %></td>
-    <td><%= image_tag "downtoke.png" %></td>
+    <td><%= image_tag "uptoke.png", :class => "uptoke", :note_id => note.id %></td>
+    <td><span><%= note.votes %></span>s</td>
+    <td><%= image_tag "downtoke.png", :class => "downtoke", :note_id => note.id %></td>
     <td style="width: 70%"><%= note.text %></td>
     <td><%= link_to 'edit', edit_note_path(note) %></td>
   </tr>
@@ -19,3 +21,17 @@
 <br />
 
 <%= link_to 'New Note', new_note_path %>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".uptoke").click(function() {
+    note_id = $(this).attr("note_id");
+    $.get('/notes/' + note_id + '/vote/1')
+  });
+
+  $(".downtoke").click(function() {
+    note_id = $(this).attr("note_id");
+    $.get('/notes/' + note_id + '/vote/-1')
+  });
+});
+</script>
