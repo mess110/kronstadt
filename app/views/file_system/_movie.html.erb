@@ -1,0 +1,14 @@
+<% if is_movie %>
+  <li data-theme="c">
+    <a href="#" onClick="$.get('/json/movie_player/play')" data-transition="none">
+      <img src="" alt="" class="ui-li-icon">
+      <span>play</span>
+    </a>
+  </li>
+  <li data-theme="c">
+    <a href="#" onClick="$.get('/json/movie_player/play?fullscreen=true')" data-transition="none">
+      <img src="" alt="" class="ui-li-icon">
+      <span>play on tv</span>
+    </a>
+  </li>
+<% end %>
