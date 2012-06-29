@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kronstadt</title>
+  <title>kronstadt</title>
   <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -19,6 +19,7 @@
           <!-- this is an ugly hack, don't try this at home -->
           <%= menu_link('mouse.png', 'http://invalidurluglyhack.cezara/cezara') %>
           <%= menu_link('window.png', '/html/window_manager?timestamp=' + Time.now.to_s) %>
+          <%= menu_link('notes.png', '/notes') %>
         </center>
       </div>
 

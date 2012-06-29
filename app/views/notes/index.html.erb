@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @notes.each do |note| %>
+  <tr>
+    <td><%= image_tag "uptoke.png" %></td>
+    <td><%= image_tag "downtoke.png" %></td>
+    <td style="width: 70%"><%= note.text %></td>
+    <td><%= link_to 'edit', edit_note_path(note) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Note', new_note_path %>

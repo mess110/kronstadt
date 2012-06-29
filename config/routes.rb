@@ -1,5 +1,7 @@
 Kronstadt::Application.routes.draw do
 
+  resources :notes
+
   get "home" => 'home#index'
 
   get ":format/system" => 'system#info'
