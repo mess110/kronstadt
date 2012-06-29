@@ -1,5 +1,5 @@
 class MouseInputController < ApplicationController
   def index
-    JRobotServer.start
+    Resque.enqueue JRobotQueue
   end
 end
