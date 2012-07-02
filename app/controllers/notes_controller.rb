@@ -1,7 +1,9 @@
 class NotesController < ApplicationController
 
   def vote
-    render :json => Note.find(params[:id]).try(:vote, params[:vote])
+    note = Note.find(params[:id])
+    note.try(:vote, params[:vote])
+    render :json => note.votes
   end
 
   # GET /notes
@@ -49,7 +51,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to notes_url, notice: 'Note was successfully created.' }
+        format.html { redirect_to notes_path, notice: 'Note was successfully created.' }
         format.json { render json: @note, status: :created, location: @note }
       else
         format.html { render action: "new" }
@@ -65,7 +67,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.update_attributes(params[:note])
-        format.html { redirect_to notes_url, notice: 'Note was successfully updated.' }
+        format.html { redirect_to notes_path, notice: 'Note was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -81,7 +83,7 @@ class NotesController < ApplicationController
     @note.destroy
 
     respond_to do |format|
-      format.html { redirect_to notes_url }
+      format.html { redirect_to notes_path }
       format.json { head :no_content }
     end
   end

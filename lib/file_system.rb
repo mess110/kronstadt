@@ -17,9 +17,12 @@ class FileSystem
       path += "/"
     end
 
+    empty = items.count == 1
+
     {
       :pwd => path,
-      :file_names => items
+      :file_names => items,
+      :empty => empty
     }
   end
 end

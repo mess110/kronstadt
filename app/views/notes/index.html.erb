@@ -1,37 +1,43 @@
-<table>
+<table class="table">
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th class="voting"></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @notes.each do |note| %>
   <tr>
-    <td><%= image_tag "uptoke.png", :class => "uptoke", :note_id => note.id %></td>
-    <td><span><%= note.votes %></span></td>
-    <td><%= image_tag "downtoke.png", :class => "downtoke", :note_id => note.id %></td>
-    <td style="width: 70%"><%= note.text %></td>
-    <td><%= link_to 'edit', edit_note_path(note) %></td>
+    <td>
+      <div class="voting"><%= image_tag "uptoke.png", :class => "uptoke", :note_id => note.id %></div>
+      <div class="voting" id="vote_count<%= note.id %>"><span><%= note.votes %></span></div>
+      <div class="voting"><%= image_tag "downtoke.png", :class => "downtoke", :note_id => note.id %></div>
+    </td>
+    <td class="note_text"><%= note.text %></td>
+    <td class="actions"><%= link_to 'edit', edit_note_path(note) %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Note', new_note_path %>
+<%= link_to 'New', new_note_path, "data-role" => "button" %>
 
 <script type="text/javascript">
+
+updateVotes = function(element, vote) {
+  note_id = $(element).attr("note_id");
+  $.get('/notes/' + note_id + '/vote/' + vote, {}, function(data) {
+    $("#vote_count" + note_id).html($("<span>").html(data));
+  })
+}
+
 $(document).ready(function() {
   $(".uptoke").click(function() {
-    note_id = $(this).attr("note_id");
-    $.get('/notes/' + note_id + '/vote/1')
+    updateVotes(this, 1);
   });
 
   $(".downtoke").click(function() {
-    note_id = $(this).attr("note_id");
-    $.get('/notes/' + note_id + '/vote/-1')
+    updateVotes(this, -1);
   });
 });
 </script>
