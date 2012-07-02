@@ -8,3 +8,9 @@
 
 RadioStation.create(name: "rock", url: "http://www.profm.ro/radio/profm_rock")
 RadioStation.create(name: "classic rock", url: "http://www.profm.ro/radio/profm_classicrock")
+
+q = Question.create(text: "What is the meaning of life?")
+q.answers << Answer.create(text: "Food")
+q.answers << Answer.create(text: "42")
+q.answers << Answer.create(text: "A recharger for a laptop")
+q.answers << Answer.create(text: "Quatro fromaggi pizza with bacon and mushrooms")
