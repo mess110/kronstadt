@@ -33,6 +33,9 @@ Kronstadt::Application.routes.draw do
   get ":format/radio_manager" => 'radio_manager#index'
   get ":format/radio_manager/:id" => 'radio_manager#play'
 
+  get ":format/trivia" => "trivia_manager#index"
+  get ":format/trivia/:player_name/:answer" => "trivia_manager#answer"
+
   root :to => 'system#info'
 
   mount Resque::Server, :at => "/resque"
