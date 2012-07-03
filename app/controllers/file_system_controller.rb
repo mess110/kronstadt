@@ -15,7 +15,18 @@ class FileSystemController < ApplicationController
   end
 
   def bookmarks
-    @bookmarks = Bookmark.find(:all)
+    bookmarks = Bookmark.find(:all).collect{|b| b.location}
+    @files = {
+      :file_names => bookmarks,
+      :empty => bookmarks.empty?,
+      :pwd => ""
+    }
+
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @files }
+      format.json { render :json => @files }
+    end
   end
 
   def add_bookmark

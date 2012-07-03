@@ -6,8 +6,6 @@ class FileSystem
 
     items = []
 
-    items += [".."] if path != "/"
-
     Dir["#{path}/*"].each do |f|
       files = f.split("/")
       items << files.last
