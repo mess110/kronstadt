@@ -34,7 +34,9 @@ Kronstadt::Application.routes.draw do
   get ":format/radio_manager/:id" => 'radio_manager#play'
 
   get ":format/trivia" => "trivia_manager#index"
-  get ":format/trivia/:player_name/:answer" => "trivia_manager#answer"
+  get ":format/trivia/:username/:answer_id" => "trivia_manager#answer"
+  get ":format/trivia/finish" => "trivia_manager#finish"
+  get ":format/trivia/points" => "trivia_manager#points"
 
   root :to => 'system#info'
 

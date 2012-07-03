@@ -1,2 +1,17 @@
-<%= @question %>
-<%= @question.answers %>
+<div data-role="content" style="padding: 15px">
+  <div data-role="fieldcontain">
+    <%= @question.text %>
+  </div>
+  <div class="ui-grid-a">
+    <% @question.answers.each_with_index do |a, i| %>
+      <%= answer_tag a, i %>
+    <% end %>
+  </div>
+  <div class="ui-grid-a">
+    <% @question.correct_answers.each_with_index do |a, i| %>
+      <p><%= a.to_json %></p>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+</script>
