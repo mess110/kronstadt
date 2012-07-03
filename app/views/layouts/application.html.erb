@@ -13,10 +13,13 @@
         <center>
           <%= menu_link('home.png', '/html/system') %>
           <%= menu_link('file_system.png', '/html/file_system') %>
-          <!-- http://invalidurluglyhack.cezara using this url, because android app checks for string ending with cezara at url-->
-          <!-- it then opens the mouse activity -->
-          <!-- this is an ugly hack, don't try this at home -->
-          <%= menu_link('mouse.png', 'http://invalidurluglyhack.cezara/cezara') %>
+          <!-- http://thisdomainnamedoesnot.exist/native_android_controller_mouse
+               using this url, because android app checks for urls ending with
+               native_android_controller
+               it then opens the mouse activity
+              
+               this is an ugly hack, don't try this at home -->
+          <%= menu_link('mouse.png', 'http://thisdomainnamedoesnot.exist/native_android_controller_mouse') %>
           <%= menu_link('window.png', '/html/window_manager?timestamp=' + Time.now.to_s) %>
           <%= menu_link('notes.png', '/notes') %>
           <%= menu_link('radio.jpeg', '/html/radio_manager') %>
