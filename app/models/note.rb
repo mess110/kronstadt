@@ -12,4 +12,8 @@ class Note < ActiveRecord::Base
       self.score = ((self.votes-1) / (time_elapsed+2)**1.8).real
     end
   end
+
+  def visit
+    system "firefox '#{text}' &"
+  end
 end

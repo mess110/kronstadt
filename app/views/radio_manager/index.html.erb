@@ -1,5 +1,0 @@
-<% @radio_stations.each do |radio| %>
-  <a data-role="button" href="#" onclick="$.get('/json/radio_manager/<%= radio.id %>')" data-transition="none">
-    <%= radio.name %>
-  </a>
-<% end %>

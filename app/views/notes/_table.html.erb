@@ -1,0 +1,22 @@
+<table class="table">
+  <tr>
+    <th class="voting"></th>
+    <th></th>
+  </tr>
+
+<% @notes.each do |note| %>
+  <tr>
+    <td>
+      <div class="voting"><%= image_tag "uptoke.png", :class => "uptoke", :note_id => note.id %></div>
+      <div class="voting" id="vote_count<%= note.id %>"><span><%= note.votes %></span></div>
+      <div class="voting"><%= image_tag "downtoke.png", :class => "downtoke", :note_id => note.id %></div>
+    </td>
+    <td class="note_text">
+      <a href="#" onclick="$.get('/json/browser_manager/<%= note.id %>')" data-transition="none">
+        <%= note.text %>
+      </a> | 
+      <%= link_to 'edit', edit_note_path(note) %>
+    </td>
+  </tr>
+<% end %>
+</table>

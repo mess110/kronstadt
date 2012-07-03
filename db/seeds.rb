@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-RadioStation.create(name: "rock", url: "http://www.profm.ro/radio/profm_rock")
-RadioStation.create(name: "classic rock", url: "http://www.profm.ro/radio/profm_classicrock")
+Note.create(text: "http://www.profm.ro/radio/profm_rock")
+Note.create(text: "http://www.profm.ro/radio/profm_classicrock")
 
 q = Question.create(text: "What is the meaning of life?")
 q.answers << Answer.create(text: "Food")

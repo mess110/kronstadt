@@ -30,13 +30,13 @@ Kronstadt::Application.routes.draw do
   get ":format/power_manager/shutdown" => 'power_manager#shutdown'
   get ":format/power_manager/reboot" => 'power_manager#reboot'
 
-  get ":format/radio_manager" => 'radio_manager#index'
-  get ":format/radio_manager/:id" => 'radio_manager#play'
-
   get ":format/trivia" => "trivia_manager#index"
   get ":format/trivia/:username/:answer_id" => "trivia_manager#answer"
   get ":format/trivia/finish" => "trivia_manager#finish"
   get ":format/trivia/points" => "trivia_manager#points"
+
+  get ":format/browser_manager" => "browser#index"
+  get ":format/browser_manager/:id" => "browser#visit"
 
   root :to => 'system#info'
 

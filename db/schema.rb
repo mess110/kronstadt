@@ -44,13 +44,6 @@ ActiveRecord::Schema.define(:version => 20120702111933) do
     t.datetime "updated_at",                :null => false
   end
 
-  create_table "radio_stations", :force => true do |t|
-    t.string   "name"
-    t.string   "url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "user_answers", :force => true do |t|
     t.string   "name"
     t.integer  "answer_id"
