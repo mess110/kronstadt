@@ -20,7 +20,7 @@ class QuestionLog < ActiveRecord::Base
 
   def finish!
     self.finished = true
-    self.true
+    self.save
   end
 
   def self.get_main_question

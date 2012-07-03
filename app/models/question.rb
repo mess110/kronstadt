@@ -3,7 +3,7 @@ class Question < ActiveRecord::Base
   has_many :question_logs
 
   def self.ask
-    q = Question.order("asked desc").first
+    q = Question.order("asked asc").first
     q.inc_ask_counter!
     QuestionLog.create(question_id: q.id)
   end
