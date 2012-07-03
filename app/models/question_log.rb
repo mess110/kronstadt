@@ -15,7 +15,17 @@ class QuestionLog < ActiveRecord::Base
   end
 
   def answer params
+    ua = UserAnswer.find_by_name_and_question_log_id params[:username], self.id
+    if ua.present?
+      return false
+    end
+
+    if answers.collect{|a| a.id}.include?(params[:answer_id].to_i)
+      return false
+    end
+
     UserAnswer.create(name: params[:username], answer_id: params[:answer_id], question_log_id: self.id)
+    true
   end
 
   def finish!

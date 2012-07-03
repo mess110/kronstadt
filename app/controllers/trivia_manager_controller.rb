@@ -23,9 +23,8 @@ class TriviaManagerController < ApplicationController
 
   def answer
     @question = QuestionLog.get_main_question
-    @question.answer params
 
-    render :text => 200
+    render :text => @question.answer(params)
   end
 
   def finish
