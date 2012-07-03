@@ -10,15 +10,15 @@ class TriviaManagerController < ApplicationController
   end
 
   def points
-    ql = QuestionLog.get_main_question
-    result = []
-    ql.user_answers.each do |ua|
-      result << {
-        :correct => ua.worth_points?,
-        :name => ua.name
-      }
-    end
-    render :xml => result
+    @score = {}
+    user_answers = UserAnswer.all.collect{|ua|
+      if !@score.has_key? ua.name
+        @score[ua.name] = ua.worth_points? ? 1 : 0
+      else
+        @score[ua.name] = @score[ua.name].to_i + (ua.worth_points? ? 1 : 0)
+      end
+    }
+    render :json => @score
   end
 
   def answer
