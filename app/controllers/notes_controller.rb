@@ -23,7 +23,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { redirect_to "/html/browser_manager" }
       format.json { render json: @note }
     end
   end
