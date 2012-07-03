@@ -1,3 +1,5 @@
+# Usage example
+# Resque.enqueue JRobotQueue
 class JRobotQueue
   @queue = :j_robot_queue
 
