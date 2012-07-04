@@ -12,17 +12,8 @@
       <div data-theme="a" data-role="header">
         <center>
           <%= menu_link('home.png', '/html/system') %>
-          <%= menu_link('file_system.png', '/html/file_system') %>
-          <!-- http://thisdomainnamedoesnot.exist/native_android_controller_mouse
-               using this url, because android app checks for urls ending with
-               native_android_controller
-               it then opens the mouse activity
-              
-               this is an ugly hack, don't try this at home -->
-          <%= menu_link('mouse.png', 'http://thisdomainnamedoesnot.exist/native_android_controller_mouse') %>
           <%= menu_link('window.png', '/html/window_manager?timestamp=' + Time.now.to_s) %>
           <%= menu_link('firefox.png', '/html/browser_manager') %>
-          <%= menu_link('trivia.png', 'http://thisdomainnamedoesnot.exist/native_android_controller_trivia') %>
         </center>
       </div>
 
